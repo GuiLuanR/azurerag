@@ -68,7 +68,7 @@ jobs:
         run: |
           # Set image name based on registry type
           if [ "${{ env.REGISTRY_TYPE }}" = "ghcr" ]; then
-            IMAGE="ghcr.io/${{ github.repository }}:${{ github.sha }}"
+            IMAGE="ghcr.io/gov-source/azure-rag/azure-rag:${{ github.sha }}"
             REGISTRY="ghcr.io"
             USERNAME="${{ github.actor }}"
             PASSWORD="${{ secrets.GITHUB_TOKEN }}"
