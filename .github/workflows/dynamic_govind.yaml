@@ -48,7 +48,8 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ env.REGISTRY_TYPE == 'ghcr' && 'ghcr.io/${{ github.repository }}:${{ github.sha }}' || '' }}
+            ghcr.io/gov-source/azure-rag/azure-rag:latest
+            ghcr.io/gov-source/azure-rag/azure-rag:${{ github.sha }}
             ${{ env.REGISTRY_TYPE == 'dockerhub' && '${{ secrets.DOCKERHUB_USERNAME }}/${{ env.AZURE_CONTAINER_APP_NAME }}:${{ github.sha }}' || '' }}
             ${{ env.REGISTRY_TYPE == 'acr' && '${{ env.ACR_LOGIN_SERVER }}/${{ env.AZURE_CONTAINER_APP_NAME }}:${{ github.sha }}' || '' }}
           file: ./Dockerfile
